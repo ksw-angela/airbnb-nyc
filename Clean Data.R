@@ -2,6 +2,7 @@ library(tidyverse)
 library(data.table)
 library(rvest)
 library(RCurl)
+library(raster)
 #4608
 
 # Inside Airbnb Data
@@ -79,5 +80,6 @@ median_income <- map(2015:2017, ~read_csv(paste0(census_url,
 
 # Census Tract Boundaries
 
-shp_url <- "https://archive.nyu.edu/retrieve/74712/nyu_2451_34513.zip"
+shp_url <- "C:/Users/angel/OneDrive/Documents/GitHub/airbnb-nyc/Data/"
 
+boundaries <- shapefile(paste0(shp_url,"nyu_2451_34513.shp"))
